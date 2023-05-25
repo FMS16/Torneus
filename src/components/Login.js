@@ -47,7 +47,7 @@ const Login = () => {
         };
         fetch('https://webapitorneus.azurewebsites.net/Usuario/api/Login', requestOptions)
             .then(response => response.json())
-            .then(data => /* TODO hacer la redireccion al login */ console.log(data))
+            .then(data => navigate(`/home`, { state: data }))
             .catch(e => setError('Los datos ingresados no son correctos'));
     }
 
